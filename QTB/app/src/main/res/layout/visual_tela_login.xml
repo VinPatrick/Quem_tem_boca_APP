@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    tools:context=".Login_Pg">
+
+    <ImageView
+        android:id="@+id/Degrade_escuro"
+        android:layout_width="493dp"
+        android:layout_height="444dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/degrade" />
+
+    <Button
+        android:id="@+id/bt_in"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_background"
+        android:isScrollContainer="false"
+        android:text="Entrar"
+        android:textSize="25dp"
+        app:icon="@drawable/icon_send"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:iconSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Password_Camp"
+        app:layout_constraintVertical_bias="0.192" />
+
+    <EditText
+        android:id="@+id/Email_Camp"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="e-mail"
+        android:inputType="textEmailAddress"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/material_dynamic_neutral30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
+
+    <EditText
+        android:id="@+id/Password_Camp"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="senha"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/material_dynamic_neutral_variant30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Email_Camp"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <Button
+        android:id="@+id/Bt_in"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_background"
+        android:isScrollContainer="false"
+        android:text="Entrar"
+        android:textSize="25dp"
+        app:icon="@drawable/icon_send"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:iconSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Password_Camp"
+        app:layout_constraintVertical_bias="0.192" />
+
+
+    <Button
+        android:id="@+id/Bt_Fpass"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="Esqueci minha senha"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Bt_in"
+        app:layout_constraintVertical_bias="0.175" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="  Não tem conta ?"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Bt_to_cadastro_pg"
+        android:layout_width="132dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:background="#00FFFFFF"
+        android:text="Cadastre-se"
+        android:textColor="#F4335E"
+        app:layout_constraintStart_toStartOf="@+id/label"
+        app:layout_constraintTop_toTopOf="@+id/label" />
+
+    <TextView
+        android:id="@+id/label_mensagem"
+        android:layout_width="198dp"
+        android:layout_height="127dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#90000000"
+        android:fontFamily="sans-serif-medium"
+        android:paddingStart="10dp"
+        android:text="Acesse seus restaurantes prediletos"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/Email_Camp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.391" />
+
+    <Button
+        android:id="@+id/Bt_voltar_capa_pg"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:background="#00FFFFFF"
+        android:paddingStart="10dp"
+        app:icon="@drawable/seta_back"
+        app:iconPadding="2dp"
+        app:iconSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/label_mensagem"
+        app:layout_constraintEnd_toStartOf="@+id/Bt_to_cadastro_pg"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

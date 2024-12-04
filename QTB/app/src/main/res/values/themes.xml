@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.QTB" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#F6335E</item> <!-- Cor rosa -->
+        <item name="colorPrimaryVariant">#C2185B</item> <!-- Variantes -->
+        <item name="colorSecondary">#F6335E</item>
+    </style>
+
+    <style name="Theme.QTB" parent="Base.Theme.QTB" />
+</resources>
