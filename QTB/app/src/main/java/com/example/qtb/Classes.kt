@@ -13,15 +13,15 @@ class Usuario (
 ){
 }
 class Restaurante(
+    var Id : Int,
     var Nome_R: String,
     var Dono: String,
-    var Tipo: String,
-    var Id_Produtos: Int,
-    var Id_Pedidos: Int
+    var Tipo: String
 ){
 }
 class Produto (
     var Id: Int,
+    var Id_Loja: Int,
     var Nome: String,
     var Tipo: String,
     var Valor: Float
@@ -30,6 +30,7 @@ class Produto (
 class Pedido(
     var id : Int,
     var Id_Produtos: Int,
-    var Comprador: String
+    var Comprador: String,
+    var Quantidade: Int
 ){
 }

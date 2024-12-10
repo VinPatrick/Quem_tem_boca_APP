@@ -15,11 +15,14 @@ class Login_Pg : AppCompatActivity() {
     lateinit var Password_Camp: EditText
     lateinit var DAO: DAO_Usuarios
     lateinit var Bt_in: Button
+    lateinit var Cliente : String
     //iniciando tela
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.visual_tela_login)
-        //passando contexto dao
+        //inicializando variavel global
+        Cliente = ""
+        // passando contexto dao
         DAO = DAO_Usuarios(this)
         //Relacionando botoes aos endereços xml
         Email_Camp = findViewById(R.id.Email_Camp)
@@ -56,6 +59,7 @@ class Login_Pg : AppCompatActivity() {
 
     fun Goto_Home_Pg(){
         val goto_home = Intent(this,Home_Pg::class.java)
+        goto_home.putExtra("ID_Cliente", Cliente)
         startActivity(goto_home)
         finish()
     }
@@ -64,6 +68,7 @@ class Login_Pg : AppCompatActivity() {
         DAO.Pesquisa(log , Email_Camp.text.toString())
         if(log.size == 1) {
             if (log.get(0).Senha.toString() == Password_Camp.text.toString()) {
+                Cliente = log.get(0).CPF
                 return true
             } else {
                 Toast.makeText(this, "Senha errada", Toast.LENGTH_SHORT).show()

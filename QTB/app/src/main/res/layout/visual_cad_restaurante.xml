@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_cadastro"
+    tools:context=".Cad_Restaurante">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="178dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Cadastre seu restaurante"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Nome_R_Camp"
+        android:layout_width="281dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:hint="Nome do seu estabelecimento"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="220dp">
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="182dp"
+        android:layout_height="288dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nome_R_Camp"
+        app:layout_constraintVertical_bias="0.059">
+
+        <RadioButton
+            android:id="@+id/Tipo_Padaria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Padaria" />
+
+        <RadioButton
+            android:id="@+id/Tipo_FastFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FastFood" />
+
+        <RadioButton
+            android:id="@+id/Tipo_Restaurante"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restaurante" />
+
+        <RadioButton
+            android:id="@+id/Tipo_hortifruti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hortifruti" />
+
+        <RadioButton
+            android:id="@+id/Tipo_Bebidas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bebidas" />
+
+        <RadioButton
+            android:id="@+id/Tipo_Atacado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atacado" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/Bt_Cadastrar_Restaurante"
+        android:layout_width="169dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_background"
+        android:text="Cadastrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="108dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toTopOf="@+id/Nome_R_Camp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/Bt_voltar_Home"
+        android:layout_width="61dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        android:backgroundTintMode="src_in"
+        android:outlineProvider="background"
+        android:paddingStart="10dp"
+        android:singleLine="true"
+        app:icon="@drawable/seta_back"
+        app:iconSize="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

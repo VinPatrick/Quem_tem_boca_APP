@@ -13,8 +13,27 @@
         android:theme="@style/Theme.QTB"
         tools:targetApi="31">
         <activity
-            android:name=".Home_Pg"
+            android:name=".Cadastra_Pedido"
             android:exported="false" />
+        <activity
+            android:name=".Cadastra_Produto"
+            android:exported="false" />
+        <activity
+            android:name=".Pedidos_Pg"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Cad_Restaurante"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Restaurante_Pg"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Home_Pg"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Perfil_Pg"
             android:exported="false"

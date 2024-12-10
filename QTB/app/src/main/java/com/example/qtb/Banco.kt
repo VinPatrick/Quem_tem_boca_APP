@@ -7,13 +7,17 @@ import android.database.sqlite.SQLiteOpenHelper
 class Banco(contexto : Context) : SQLiteOpenHelper(contexto,"SuperBanco",null,1){
     /*
     init {
-        contexto.deleteDatabase("SuperBanco")
+        contexto.deleteDatabase("SuperBanco")// descomente esta linha para apagar o banco de dados completamente
     }
     */
     //criaçao do banco
     override fun onCreate(db: SQLiteDatabase?) {
         //nomeando tabelas
         val nomt1 = "TabUsuarios"
+        val nomt2 = "TabRestaurantes"
+        val nomt3 = "TabProdutos"
+        val nomt4 = "TabPedidos"
+
         val CPF = "CPF"
         val Nome = "Nome"
         val Senha = "Senha"
@@ -24,17 +28,16 @@ class Banco(contexto : Context) : SQLiteOpenHelper(contexto,"SuperBanco",null,1)
         val Bairro = "Bairro"
         val Telefone = "Telefone"
         val Num = "Num"
-
+        val Id_Loja = "Id_Loja"
         val Dono = "Dono"
         val Tipo = "Tipo"
         val Id_Produtos = "Id_Produtos"
         val Id_Pedidos = "Id_Pedidos"
         val Nome_R = "Nome_R"
-
         val Nome_P = "Nome_P"
         val Valor = "Valor"
-
         val Comprador = "Comprador"
+        val Quantidade = "Quantidade"
 
         //criando tabelas
         //tabela de usuarios
@@ -55,31 +58,34 @@ class Banco(contexto : Context) : SQLiteOpenHelper(contexto,"SuperBanco",null,1)
         }
         //tabela de restaurantes
         val Criando_TabRestaurantes =
-            "CREATE TABLE $nomt1 (" +
-                    "$Dono TEXT PRIMARY KEY NOT NULL," +
+            "CREATE TABLE $nomt2 (" +
+                    "$Id_Loja INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
                     "$Nome_R TEXT," +
                     "$Tipo TEXT," +
-                    "$Id_Produtos INTEGER," +
-                    "$Id_Pedidos INTEGER)"
+                    "$Dono TEXT, FOREIGN KEY(Dono) REFERENCES TabUsuarios(CPF))"
         if (db != null) {
             db.execSQL(Criando_TabRestaurantes)
         }
         //tabela de produdos
         val Criando_TabProdutos =
-            "CREATE TABLE $nomt1 (" +
-                    "$Id_Produtos INTEGER PRIMARY KEY NOT NULL," +
+            "CREATE TABLE $nomt3 (" +
+                    "$Id_Produtos INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL," +
+                    "$Id_Loja INTEGER," +
                     "$Nome_P TEXT," +
                     "$Tipo TEXT," +
-                    "$Valor FLOAT)"
+                    "$Valor TEXT, " +
+                    "FOREIGN KEY(Id_Loja) REFERENCES TabRestaurantes(Id_Loja))"
         if (db != null) {
             db.execSQL(Criando_TabProdutos)
         }
         //tabela pedidos
         val Criando_TabPedidos =
-            "CREATE TABLE $nomt1 (" +
-                    "$Id_Pedidos INTEGER PRIMARY KEY NOT NULL," +
-                    "$Id_Produtos INTEGER," +
-                    "$Comprador TEXT)"
+            "CREATE TABLE $nomt4 (" +
+                    "$Id_Pedidos INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL," +
+                    "$Id_Produtos INTEGER,"+
+                    "$Comprador TEXT," +
+                    "$Quantidade INTEGER," +
+                    "FOREIGN KEY(Comprador) REFERENCES TabUsuarios(CPF))"
         if (db != null) {
             db.execSQL(Criando_TabPedidos)
         }
